@@ -1,5 +1,4 @@
 import styles from "./App.module.css";
-import { FaCartPlus } from "react-icons/fa";
 import DessertCard from "./components/DessertCard";
 
 const allDesserts = [

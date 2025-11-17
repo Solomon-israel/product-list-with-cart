@@ -1,8 +1,9 @@
-import React from "react";
+import { FaCartPlus } from "react-icons/fa";
+import styles from "../App.module.css";
 
-export default function DessertCard({dessert}) {
+export default function DessertCard({ dessert }) {
   return (
-    <div className={styles.item} key={id}>
+    <div className={styles.item}>
       <div className={styles.image_container}>
         <img src={dessert.image} alt={dessert.name} />
       </div>

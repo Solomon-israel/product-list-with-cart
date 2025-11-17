@@ -1,5 +1,6 @@
 import styles from "./App.module.css";
 import { FaCartPlus } from "react-icons/fa";
+import DessertCard from "./components/DessertCard";
 
 const allDesserts = [
   {
@@ -63,22 +64,8 @@ export default function App() {
     <div className={styles.container}>
       <h1>Desserts</h1>
       <div className={styles.inner_container}>
-        {allDesserts.map((dessert) => (
-          <div className={styles.item}>
-            <div className={styles.image_container}>
-              <img src={dessert.image} alt={dessert.name} />
-            </div>
-            <button className={styles.add_to_cart}>
-              <FaCartPlus className={styles.cartIcon} />
-              <span>Add to cart</span>
-            </button>
-
-            <div className={styles.aboutDesserts}>
-              <p>{dessert.label}</p>
-              <h3>{dessert.name}</h3>
-              <h5>${dessert.price.toFixed(2)}</h5>
-            </div>
-          </div>
+        {allDesserts.map((dessert, id) => (
+          <DessertCard dessert={dessert} key={id} />
         ))}
       </div>
     </div>

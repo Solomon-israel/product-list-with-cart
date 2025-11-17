@@ -1,0 +1,39 @@
+.container {
+  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: 350px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderBtn {
+  width: 150px;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  gap: 7px;
+  padding: 7px;
+  border: 1px solid gray;
+  border-radius: 50px;
+}
+
+.aboutDesserts {
+  line-height: 25px;
+}
+
+.aboutDesserts p {
+  color: gray;
+}
+
+.aboutDesserts h5 {
+  color: rgb(199, 96, 84);
+}

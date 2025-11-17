@@ -2,32 +2,58 @@
   padding: 1rem;
 }
 
+.inner_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .inner_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .inner_container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 h1 {
   margin-bottom: 1rem;
 }
 
-.image {
-  width: 350px;
+.image_container {
+  width: 100%;
 }
 
 .item {
   display: flex;
   flex-direction: column;
+  /* border: 1px solid; */
 }
 
-.orderBtn {
+.add_to_cart {
+  position: relative;
   width: 150px;
-  align-self: center;
-  justify-content: center;
   display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
   gap: 7px;
   padding: 7px;
   border: 1px solid gray;
+  top: -15px;
   border-radius: 50px;
 }
 
+.cartIcon {
+  color: rgb(199, 96, 84);
+}
+
 .aboutDesserts {
-  line-height: 25px;
+  padding: 1rem;
 }
 
 .aboutDesserts p {

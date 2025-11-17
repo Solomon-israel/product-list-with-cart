@@ -1,161 +1,85 @@
 import styles from "./App.module.css";
 import { FaCartPlus } from "react-icons/fa";
 
+const allDesserts = [
+  {
+    image: "/image-waffle-mobile.jpg",
+    label: "Waffle",
+    name: "Waffle with Berries",
+    price: 6.5,
+  },
+  {
+    image: "/image-creme-brulee-mobile.jpg",
+    label: "Crème Brûlée",
+    name: "Vanilla Bean Crème Brûlée",
+    price: 7,
+  },
+  {
+    image: "/image-macaron-mobile.jpg",
+    label: "Macaron",
+    name: "Macaron Mix of Five",
+    price: 8,
+  },
+  {
+    image: "/image-tiramisu-mobile.jpg",
+    label: "Tiramisu",
+    name: "Classic Tiramisu",
+    price: 5.5,
+  },
+  {
+    image: "/image-baklava-mobile.jpg",
+    label: "Baklava",
+    name: "Pistachio Baklava",
+    price: 4,
+  },
+  {
+    image: "/image-meringue-mobile.jpg",
+    label: "Lemon Meringue Pie",
+    name: "Waffle with Berries",
+    price: 5,
+  },
+  {
+    image: "/image-cake-mobile.jpg",
+    label: "Cake",
+    name: "Red Velvet Cake",
+    price: 4.5,
+  },
+  {
+    image: "/image-brownie-mobile.jpg",
+    label: "Brownie",
+    name: "Salted Caramel Brownie",
+    price: 4.5,
+  },
+  {
+    image: "/image-panna-cotta-mobile.jpg",
+    label: "Panna Cotta",
+    name: "Vanilla Panna Cotta",
+    price: 6.5,
+  },
+];
+
 export default function App() {
   return (
     <div className={styles.container}>
       <h1>Desserts</h1>
-      {/* Waffle */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-waffle-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
+      <div className={styles.inner_container}>
+        {allDesserts.map((dessert) => (
+          <div className={styles.item}>
+            <div className={styles.image_container}>
+              <img src={dessert.image} alt={dessert.name} />
+            </div>
+            <button className={styles.add_to_cart}>
+              <FaCartPlus className={styles.cartIcon} />
+              <span>Add to cart</span>
+            </button>
 
-        <div className={styles.aboutDesserts}>
-          <p>Waffle</p>
-          <h3>Waffle with Berries</h3>
-          <h5>$6.50</h5>
-        </div>
-      </div>
-
-      {/* creme-Brulee */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-creme-brulee-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Crème Brûlée</p>
-          <h3>Vanilla Bean Crème Brûlée</h3>
-          <h5>$7.00</h5>
-        </div>
-      </div>
-
-      {/* Macaron */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-macaron-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Macaron</p>
-          <h3>Macaron Mix of Five</h3>
-          <h5>$8.00</h5>
-        </div>
-      </div>
-
-      {/* Tiramisu */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-tiramisu-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Tiramisu</p>
-          <h3>Classic Tiramisu</h3>
-          <h5>$5.50</h5>
-        </div>
-      </div>
-
-      {/* Baklava */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-baklava-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Baklava</p>
-          <h3>Pistachio Baklava</h3>
-          <h5>$4.00</h5>
-        </div>
-      </div>
-
-      {/* Meringue Pie */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-meringue-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Pie</p>
-          <h3>Lemon Meringue Pie</h3>
-          <h5>$5.00</h5>
-        </div>
-      </div>
-
-      {/* Cake */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-cake-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Cake</p>
-          <h3>Red Velvet Cake</h3>
-          <h5>$ 4.50</h5>
-        </div>
-      </div>
-
-      {/* Brownie */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-brownie-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p>Brownie</p>
-          <h3>Salted Caramel Brownie</h3>
-          <h5>$ 4.50</h5>
-        </div>
-      </div>
-
-      {/* Panna-cotta */}
-      <div className={styles.item}>
-        <div className={styles.image}>
-          <img src="/image-panna-cotta-mobile.jpg" alt="food" />
-        </div>
-        <button className={styles.orderBtn}>
-          <FaCartPlus className={styles.cartIcon} />
-          Add to cart
-        </button>
-
-        <div className={styles.aboutDesserts}>
-          <p> Panna Cotta</p>
-          <h3> Vanilla Panna Cotta</h3>
-          <h5>$ 6.50</h5>
-        </div>
+            <div className={styles.aboutDesserts}>
+              <p>{dessert.label}</p>
+              <h3>{dessert.name}</h3>
+              <h5>${dessert.price.toFixed(2)}</h5>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

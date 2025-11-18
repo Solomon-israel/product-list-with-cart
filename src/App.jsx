@@ -1,3 +1,4 @@
+import { FaShoppingBag } from "react-icons/fa";
 import styles from "./App.module.css";
 import DessertCard from "./components/DessertCard";
 
@@ -60,12 +61,21 @@ const allDesserts = [
 
 export default function App() {
   return (
-    <div className={styles.container}>
-      <h1>Desserts</h1>
-      <div className={styles.inner_container}>
-        {allDesserts.map((dessert, id) => (
-          <DessertCard dessert={dessert} key={id} />
-        ))}
+    <div>
+      <div className={styles.container}>
+        <h1>Desserts</h1>
+        <div className={styles.inner_container}>
+          {allDesserts.map((dessert, id) => (
+            <DessertCard dessert={dessert} key={id} />
+          ))}
+        </div>
+        <div className={styles.selected_item}>
+          <div>
+            <h1>Your cart (0)</h1>
+            {/* <FaShoppingBag /> */}
+            <div className={styles.cart_image}></div>
+          </div>
+        </div>
       </div>
     </div>
   );

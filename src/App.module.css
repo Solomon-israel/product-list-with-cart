@@ -54,7 +54,7 @@ h1 {
   border-radius: 50px;
 }
 
-.add_to_cart span {
+.add_to_cart span{
   color: black;
 }
 
@@ -97,5 +97,5 @@ h1 {
 }
 
 .emptyCartImageContainer {
-  width: 200px;
+  width: 300px;
 }

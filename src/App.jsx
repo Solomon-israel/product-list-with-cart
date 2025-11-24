@@ -61,7 +61,7 @@ const allDesserts = [
 
 export default function App() {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <h1>Desserts</h1>
         <div className={styles.inner_container}>
@@ -69,16 +69,16 @@ export default function App() {
             <DessertCard dessert={dessert} key={id} />
           ))}
         </div>
-        <div className={styles.selected_item}>
-          <h1>Your cart (0)</h1>
-          <div className={styles.div}>
-            <div className={styles.emptyCartImageContainer}>
-              <img src="/illustration-empty-cart.svg" alt="empty cart" />
-            </div>
-          <p>Your added items will appear here</p>
+      </div>
+      <div className={styles.selected_item}>
+        <h1>Your cart (0)</h1>
+        <div className={styles.div}>
+          <div className={styles.emptyCartImageContainer}>
+            <img src="/illustration-empty-cart.svg" alt="empty cart" />
           </div>
-          <div className={styles.cart_image}></div>
+          <p>Your added items will appear here</p>
         </div>
+        <div className={styles.cart_image}></div>
       </div>
     </div>
   );

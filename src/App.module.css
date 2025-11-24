@@ -65,9 +65,28 @@ h1 {
   color: rgb(199, 96, 84);
 }
 
-.selected_item{
+.selected_item {
+  border: 1px solid;
   padding: 1rem;
-  width: 300px;
-  height: 200px;
   background-color: white;
+  border-radius: 10px;
+}
+
+.selected_item h1 {
+  color: hsl(14, 86%, 42%);
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div p {
+  color: hsl(7, 20%, 60%);
+  padding-bottom: 1rem;
+}
+
+.emptyCartImageContainer {
+  width: 300px;
 }

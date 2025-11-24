@@ -70,11 +70,14 @@ export default function App() {
           ))}
         </div>
         <div className={styles.selected_item}>
-          <div>
-            <h1>Your cart (0)</h1>
-            {/* <FaShoppingBag /> */}
-            <div className={styles.cart_image}></div>
+          <h1>Your cart (0)</h1>
+          <div className={styles.div}>
+            <div className={styles.emptyCartImageContainer}>
+              <img src="/illustration-empty-cart.svg" alt="empty cart" />
+            </div>
+          <p>Your added items will appear here</p>
           </div>
+          <div className={styles.cart_image}></div>
         </div>
       </div>
     </div>

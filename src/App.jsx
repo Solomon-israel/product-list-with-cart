@@ -1,6 +1,7 @@
 import { FaShoppingBag } from "react-icons/fa";
 import styles from "./App.module.css";
 import DessertCard from "./components/DessertCard";
+import { useState } from "react";
 
 const allDesserts = [
   {
@@ -59,7 +60,14 @@ const allDesserts = [
   },
 ];
 
+const [cart,setCart] = useState([])
+
+function handleCart (allDessert) {
+  setCart(...cart,allDessert)
+}
+
 export default function App() {
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -70,6 +78,8 @@ export default function App() {
           ))}
         </div>
       </div>
+
+      {/* SELECTED ITEMS */}
       <div className={styles.selected_item}>
         <h1>Your cart (0)</h1>
         <div className={styles.div}>

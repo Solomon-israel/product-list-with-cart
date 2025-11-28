@@ -5,54 +5,63 @@ import { useState } from "react";
 
 const allDesserts = [
   {
+    id: 1,
     image: "/image-waffle-mobile.jpg",
     label: "Waffle",
     name: "Waffle with Berries",
     price: 6.5,
   },
   {
+    id: 2,
     image: "/image-creme-brulee-mobile.jpg",
     label: "Crème Brûlée",
     name: "Vanilla Bean Crème Brûlée",
     price: 7,
   },
   {
+    id: 3,
     image: "/image-macaron-mobile.jpg",
     label: "Macaron",
     name: "Macaron Mix of Five",
     price: 8,
   },
   {
+    id: 4,
     image: "/image-tiramisu-mobile.jpg",
     label: "Tiramisu",
     name: "Classic Tiramisu",
     price: 5.5,
   },
   {
+    id: 5,
     image: "/image-baklava-mobile.jpg",
     label: "Baklava",
     name: "Pistachio Baklava",
     price: 4,
   },
   {
+    id: 6,
     image: "/image-meringue-mobile.jpg",
     label: "Lemon Meringue Pie",
     name: "Waffle with Berries",
     price: 5,
   },
   {
+    id: 7,
     image: "/image-cake-mobile.jpg",
     label: "Cake",
     name: "Red Velvet Cake",
     price: 4.5,
   },
   {
+    id: 8,
     image: "/image-brownie-mobile.jpg",
     label: "Brownie",
     name: "Salted Caramel Brownie",
     price: 4.5,
   },
   {
+    id: 9,
     image: "/image-panna-cotta-mobile.jpg",
     label: "Panna Cotta",
     name: "Vanilla Panna Cotta",
@@ -60,13 +69,13 @@ const allDesserts = [
   },
 ];
 
-const [cart,setCart] = useState([])
-
-function handleCart (allDessert) {
-  setCart(...cart,allDessert)
-}
-
 export default function App() {
+  const [cart, setCart] = useState([]);
+
+  function handleAddToCart(id) {
+    const product = allDesserts.find((p) => p.id === id);
+    setCart((prev) => [...prev, product]);
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -74,7 +83,11 @@ export default function App() {
         <h1>Desserts</h1>
         <div className={styles.inner_container}>
           {allDesserts.map((dessert, id) => (
-            <DessertCard dessert={dessert} key={id} />
+            <DessertCard
+              dessert={dessert}
+              key={id}
+              handleAddToCart={handleAddToCart}
+            />
           ))}
         </div>
       </div>
@@ -88,7 +101,28 @@ export default function App() {
           </div>
           <p>Your added items will appear here</p>
         </div>
-        <div className={styles.cart_image}></div>
+      </div>
+
+      {/* ordered items */}
+      <div className={styles.confirmedSectionContainer}>
+        {cart.map((c) => (
+          <div className={styles.confirmedSection}>
+            <div className={styles.confirmedImage}>
+              <img src="icon-order-confirmed.svg" alt="confirmed" />
+            </div>
+            <h2>Order confirmed</h2>
+            <p>We hope you enjoy your food!</p>
+
+            <div className={styles.listOfFoodConfirmed}>
+              <div className={styles.orderedFood}>
+                <img src={c.image} alt={c.label} />
+              </div>
+              <h3>{c.label}</h3>
+              <p>1x</p>
+              <span>$ {c.price} </span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

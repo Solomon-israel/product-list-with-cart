@@ -101,6 +101,36 @@ h1 {
   width: 200px;
 }
 
+.confirmedSection{
+  padding: 1rem;
+  border: 1px solid;
+}
+
+.confirmedSection p{
+  margin: 0.5rem 0;
+}
+
+.confirmedImage{
+  width: 50px;
+  /* border: 1px solid ; */
+}
+
+.listOfFoodConfirmed {
+/* margin-bottom: 1rem; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1100px) {
   .wrapper {
     display: flex;

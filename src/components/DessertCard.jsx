@@ -1,14 +1,16 @@
 import { FaCartPlus } from "react-icons/fa";
 import styles from "../App.module.css";
 
-export default function DessertCard({ dessert }) {
+export default function DessertCard({ dessert, handleAddToCart}) {
+  console.log(dessert);
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.item}>
         <div className={styles.image_container}>
           <img src={dessert.image} alt={dessert.name} />
         </div>
-        <button className={styles.add_to_cart}>
+        <button onClick={()=> handleAddToCart(dessert.id)} className={styles.add_to_cart}>
           <FaCartPlus className={styles.cartIcon} />
           <span>Add to cart</span>
         </button>

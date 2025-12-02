@@ -86,6 +86,10 @@ export default function App() {
     setAllProducts(updateProducts);
   }
 
+  function handleAddCount() {
+    setCount(count + 1);
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -96,7 +100,8 @@ export default function App() {
               dessert={dessert}
               key={id}
               handleAddToCart={handleAddToCart}
-              handleAddCount={handleAddToCart}
+              handleAddCount={handleAddCount}
+              count={count}
             />
           ))}
         </div>

@@ -6,6 +6,7 @@ export default function DessertCard({
   dessert,
   handleAddToCart,
   handleAddCount,
+  count,
 }) {
   return (
     <div className={styles.wrapper}>
@@ -16,8 +17,9 @@ export default function DessertCard({
         {dessert.selected ? (
           <div className={styles.add_to_cart}>
             <div className={styles.counter}>
-              <button onClick={handleAddToCart}>+</button>
-              <span>{dessert.selected}</span>
+              <button onClick={handleAddCount}>+</button>
+              {/* <span>{dessert.selected}</span> */}
+              <span>{count}</span>
               <button>-</button>
             </div>
           </div>

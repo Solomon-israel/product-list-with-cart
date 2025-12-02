@@ -40,6 +40,21 @@ h1 {
   /* border: 1px solid; */
 }
 
+.counter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* border: 1px solid; */
+}
+
+.counter button {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 .add_to_cart {
   position: relative;
   width: 150px;
@@ -101,42 +116,52 @@ h1 {
   width: 200px;
 }
 
-.confirmedSection{
+.selectedItemsParentDiv {
+  display: flex;
+  width: 100%;
+}
+
+.selectedItems {
+  width: 90%;
+  border: 1px solid;
+  align-self: center;
+  justify-self: center;
+}
+
+/* .confirmedSection {
   padding: 1rem;
   border: 1px solid;
 }
 
-.confirmedSection p{
+.confirmedSection p {
   margin: 0.5rem 0;
 }
 
-.confirmedImage{
+.confirmedImage {
   width: 50px;
-  /* border: 1px solid ; */
 }
 
 .listOfFoodConfirmed {
-/* margin-bottom: 1rem; */
+  display: flex;
+  gap: 5px;
 }
 
+.orderedFood {
+  width: 50px;
+  border-radius: 15px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.confirmedTextChild {
+  display: flex;
+  gap: 10px;
+} */
 
 @media screen and (min-width: 1100px) {
   .wrapper {
     display: flex;
   }
 
-  .selected_item{
+  .selected_item {
     width: 900px;
   }
 }

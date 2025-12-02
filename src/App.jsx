@@ -71,10 +71,19 @@ const allDesserts = [
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  const [allProducts, setAllProducts] = useState(allDesserts);
+  const [count, setCount] = useState(1);
 
   function handleAddToCart(id) {
-    const product = allDesserts.find((p) => p.id === id);
-    setCart((prev) => [...prev, product]);
+    const updateProducts = allProducts.map((p) => {
+      if (p.id === id) {
+        return { ...p, selected: true };
+      }
+
+      return p;
+    });
+
+    setAllProducts(updateProducts);
   }
 
   return (
@@ -82,17 +91,20 @@ export default function App() {
       <div className={styles.container}>
         <h1>Desserts</h1>
         <div className={styles.inner_container}>
-          {allDesserts.map((dessert, id) => (
+          {allProducts.map((dessert, id) => (
             <DessertCard
               dessert={dessert}
               key={id}
               handleAddToCart={handleAddToCart}
+              handleAddCount={handleAddToCart}
             />
           ))}
         </div>
       </div>
 
       {/* SELECTED ITEMS */}
+      {/* if(cart){} */}
+
       <div className={styles.selected_item}>
         <h1>Your cart (0)</h1>
         <div className={styles.div}>
@@ -103,8 +115,20 @@ export default function App() {
         </div>
       </div>
 
+      {/* SELECTED ITEMS */}
+      <div className={styles.selectedItemsParentDiv}>
+        <div className={styles.selectedItems}>
+          <h2>Your Cart (7)</h2>
+          <h3>Classic Tiramisu</h3>
+          <div>
+            <p>1x</p>
+            <span>@ 5.50</span>
+          </div>
+        </div>
+      </div>
+
       {/* ordered items */}
-      <div className={styles.confirmedSectionContainer}>
+      {/* <div className={styles.confirmedSectionContainer}>
         {cart.map((c) => (
           <div className={styles.confirmedSection}>
             <div className={styles.confirmedImage}>
@@ -117,13 +141,17 @@ export default function App() {
               <div className={styles.orderedFood}>
                 <img src={c.image} alt={c.label} />
               </div>
-              <h3>{c.label}</h3>
-              <p>1x</p>
-              <span>$ {c.price} </span>
+              <div className={styles.confirmedText}>
+                <h3>{c.label}</h3>
+                <div className={styles.confirmedTextChild}>
+                  <p>1x</p>
+                  <p>$ {c.price} </p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
